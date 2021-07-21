@@ -1,0 +1,22 @@
+GET http://localhost:3000/subscribers
+
+###
+
+GET http://localhost:3000/subscribers/60f897b2facff24c74b23c21
+
+
+###
+
+POST http://localhost:3000/subscribers
+Content-Type:  application/json
+
+{
+    "name": "jhon",
+    "email": "jhon@jhon",
+    "phone": "09990332",
+    "message": "sdfhasdf"
+}
+
+###
+
+DELETE http://localhost:3000/subscribers/60f897b2facff24c74b23c21

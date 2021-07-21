@@ -1,0 +1,18 @@
+{
+  "blogs": [
+    {
+      "name": "Art Man",
+      "email": "art@friendster.com",
+      "phone": "09987654321",
+      "message": "Pautang naman",
+      "id": 1
+    },
+    {
+      "name": "Master Gelo",
+      "email": "gelo@friendster.com",
+      "phone": "09987654322",
+      "message": "Lorem ipsum",
+      "id": 2
+    }
+  ]
+}
