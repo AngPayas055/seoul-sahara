@@ -3,11 +3,11 @@ import { useHistory } from "react-router-dom"
 import { useRouter } from 'next/router'
 
 export const getStaticPaths = async () => {
-    const res = await fetch('http://localhost:8000/blogs');
+    const res = await fetch('http://localhost:4000/subscribers/');
     const data = await res.json();
-
+    console.log(data)
     const paths = data.map(ninja => {
-        return {
+        return {            
              params: { id: ninja.id.toString() }
         }
     })
@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const res = await fetch('http://localhost:8000/blogs/' + id);
+    const res = await fetch('http://localhost:4000/subscribers/' + id);
     const data = await res.json();
 
     return {
@@ -33,7 +33,7 @@ const Details = ({ninja}) => {
     // const history = useHistory();
     const router = useRouter()
     const handleClick = () => {
-        fetch('http://localhost:8000/blogs/' + ninja.id,{
+        fetch('http://localhost:4000/subscribers/' + ninja.id,{
             method: 'DELETE'
         }).then(() => {
             router.push('/admin')
