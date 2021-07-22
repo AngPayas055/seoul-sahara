@@ -7,6 +7,8 @@ import Navbar from '../comps/Navbar'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import HistoryImg from '../public/history-img.jpg'
+import { GetServerSideProps } from 'next'
+
 
 
 
@@ -17,10 +19,14 @@ export default function Home() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 const router = useRouter();
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const blog = { name, email, phone, message };
+    
     fetch('http://localhost:4000/subscribers/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
@@ -28,7 +34,10 @@ const router = useRouter();
     }).then(() => {
       router.push('/')
     })
+    console.log(handleSubmit)
   }
+
+ 
 
   return (
     <>
@@ -163,7 +172,7 @@ We always continue to strive and delight people with all the best that we can gi
         
         </div>
 
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} method="post" action="/">
         <div className="container mt-80 mb-80">
         <div className="row">
             <div className="col-12">
@@ -196,7 +205,7 @@ We always continue to strive and delight people with all the best that we can gi
 
           <label  className=
             'mt-3'>Input your message</label>          
-          <textarea name="description" required
+          <textarea name="message" required
           value={message}
           onChange={(e) => setMessage(e.target.value)}  />
           </div>

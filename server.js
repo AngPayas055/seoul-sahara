@@ -22,4 +22,29 @@ app.use(express.json())
 const subscribersRouter = require('./routes/subscribers')
 app.use('/subscribers',subscribersRouter)
 
+
+const notesSchema = {
+    name: String,
+    phone: String,
+    email: String,
+    message: String
+}
+
+const Note = mongoose.model("Note", notesSchema)
+
+app.get("/", function(req, res){
+    res.send("express isworking")
+})
+
+app.post("/", function(req, res){
+    let newNote = new Note ({
+        name: req.body.name,
+        phone: req.body.phone,
+        email: req.body.email,
+        message: req.body.message
+    })
+    newNote.save();
+    res.redirect('/')
+})  
+
 app.listen(4000, () => console.log('Server Started'))

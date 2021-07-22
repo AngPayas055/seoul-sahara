@@ -1,5 +1,5 @@
 import Link from 'next/link'
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 
     const res = await fetch('http://localhost:4000/subscribers/');
     const data = await res.json();
