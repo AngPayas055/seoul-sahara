@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export const getStaticProps = async () => {
 
-    const res = await fetch('http://localhost:4000/subscribers');
+    const res = await fetch('http://localhost:4000/subscribers/');
     const data = await res.json();
 
     return {
@@ -10,7 +10,8 @@ export const getStaticProps = async () => {
 }
 
 
-const Admin = ( { ninjas } ) => {
+const Admin = ({ ninjas }) => {
+    console.log(ninjas)
     return ( 
         <div>
             <div className="container">
@@ -24,16 +25,16 @@ const Admin = ( { ninjas } ) => {
                     <div className="col-12">
 
                    
-                        {ninjas.map(ninja => (
-                        // <Link href={'/admin/' + ninja.id} key={ninja.id}>
-                            
-                        // </Link>
-                        <a className="single">
-                        <h3>{ ninja.name }</h3>                              
-                        <p>{ ninja.email }</p>
-                        <p>{ ninja.phone }</p>
-                        <p>{ ninja.message }</p>
-                    </a>
+                        {ninjas.map((ninja,pos) => (
+                        <div className="single" key={pos} >
+                            <div>
+                                <h3>{ ninja.name }</h3>                              
+                                <p>{ ninja.email }</p>
+                                <p>{ ninja.phone }</p>
+                                <p>{ ninja.message }</p>                        
+                            </div>                            
+                         </div>
+                        
                         ))}
 
                     </div>
