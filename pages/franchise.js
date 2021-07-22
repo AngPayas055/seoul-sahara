@@ -20,7 +20,7 @@ const router = useRouter();
   }
     return ( 
         <>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12">
             <h2 className="text-center">Contact Us</h2>
           </div>
@@ -68,7 +68,7 @@ const router = useRouter();
         <button>Submit</button>
 
       </div>
-        </form>
+        </form> */}
         
       </>
      );

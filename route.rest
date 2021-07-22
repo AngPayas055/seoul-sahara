@@ -2,8 +2,7 @@ GET http://localhost:4000/subscribers
 
 ###
 
-GET http://localhost:4000/subscribers/60f8a0d1b0c1a93014924c1d
-
+GET http://localhost:4000/subscribers/60f896f7facff24c74b23c1e
 ###
 
 POST http://localhost:4000/subscribers

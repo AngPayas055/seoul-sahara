@@ -21,7 +21,7 @@ const router = useRouter();
     e.preventDefault();
     
     const blog = { name, email, phone, message };
-    fetch('http://localhost:8000/blogs/', {
+    fetch('http://localhost:4000/subscribers/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog)
@@ -193,11 +193,12 @@ We always continue to strive and delight people with all the best that we can gi
         
         <div className="row">
           <div className="col-12">
+
           <label  className=
             'mt-3'>Input your message</label>          
           <textarea name="description" required
           value={message}
-          onChange={(e) => setMessage(e.target.value)} defaultValue="Input your message" />
+          onChange={(e) => setMessage(e.target.value)}  />
           </div>
 
         </div>

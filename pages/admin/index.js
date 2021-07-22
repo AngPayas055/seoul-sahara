@@ -25,11 +25,15 @@ const Admin = ( { ninjas } ) => {
 
                    
                         {ninjas.map(ninja => (
-                        <Link href={'/admin/' + ninja.id} key={ninja.id}>
-                            <a className="single">
-                                <h3>{ ninja.name }</h3>
-                            </a>
-                        </Link>
+                        // <Link href={'/admin/' + ninja.id} key={ninja.id}>
+                            
+                        // </Link>
+                        <a className="single">
+                        <h3>{ ninja.name }</h3>                              
+                        <p>{ ninja.email }</p>
+                        <p>{ ninja.phone }</p>
+                        <p>{ ninja.message }</p>
+                    </a>
                         ))}
 
                     </div>
